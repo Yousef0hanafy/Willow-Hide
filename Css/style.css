@@ -22,7 +22,6 @@
     --secondary-color-overlay: var(--overlay-dark-warm);
 
     --section-padding: 100px 0;
-
     /* Font Variables */
     --font-heading: "Playwrite IN", "Sansita", cursive;
     --font-subheading: "Sansita", sans-serif;
@@ -31,8 +30,6 @@
 /* End Variables */
 /* Start Global Rules */
 *{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
