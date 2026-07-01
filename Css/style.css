@@ -245,7 +245,7 @@ header nav .form i{
 /* Start Landing */
 .landing{
     min-height: 100vh;
-    background-image: url("../Images/Craft/BG_9.webp");
+    background-image: url("../Images/Craft/BG_9.jpg");
     background-color: var(--artisan-tan);
     background-size: cover;
     background-position: center;
@@ -386,7 +386,7 @@ header nav .form i{
     padding: var(--section-padding);
     height: 600px;
     position: relative;
-    background-image: url("../Images/Craft/CraftMan_1.webp");
+    background-image: url("../Images/Craft/CraftMan_1.jpg");
     background-size: cover;
     background-position: center;
     background-color: var(--main-color);
@@ -660,7 +660,7 @@ header nav .form i{
     padding: var(--section-padding);
     position: relative;
     text-align: center;
-    background-image: url("../Images/Craft/BG_8.webp");
+    background-image: url("../Images/Craft/BG_8.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -846,7 +846,7 @@ header nav .form i{
     text-align: center;
     color: white;
     position: relative;
-    background-image: url("../Images/bgQuote.webp");
+    background-image: url("../Images/bgQuote.jpg");
     background-attachment: fixed;
     background-size: cover;
 }   
@@ -991,7 +991,7 @@ header nav .form i{
 /* Start Subscribe  */
 .subscribe{
     padding: var(--section-padding);
-    background-image: url("../Images/bgSub.webp");
+    background-image: url("../Images/bgSub.jpg");
     background-attachment: fixed;
     background-size: cover;
     position: relative;
@@ -1167,7 +1167,7 @@ header nav .form i{
 /* Start Footer  */
 .footer{
     padding: 50px 0;
-    background-image: url("../Images/bgSub.webp");
+    background-image: url("../Images/bgSub.jpg");
     background-size: cover;
     position: relative;
     color: var(--bg-cream);
@@ -1247,22 +1247,5 @@ header nav .form i{
 }
 /* End Skill Bar Animation */
 
-/* Start WebP Fallback — if browser doesn't support WebP, use JPEG/PNG */
-.no-webp .landing {
-    background-image: url("../Images/Craft/BG_9.jpg");
-}
-.no-webp .design {
-    background-image: url("../Images/Craft/CraftMan_1.jpg");
-}
-.no-webp .stats {
-    background-image: url("../Images/Craft/BG_8.jpg");
-}
-.no-webp .quote {
-    background-image: url("../Images/bgQuote.jpg");
-}
-.no-webp .subscribe,
-.no-webp .footer {
-    background-image: url("../Images/bgSub.jpg");
-}
-/* End WebP Fallback */
+
 
