@@ -18,7 +18,7 @@
 
     /* Re-purpose existing variables or add new specific ones */
     --main-color: var(--artisan-brown);
-    --secondary-color-bg: var(--bg-light-tan);
+    --secondary-color: rgba(50, 40, 30, 0.75);
     --secondary-color-overlay: var(--overlay-dark-warm);
 
     --section-padding: 100px 0;
@@ -82,7 +82,6 @@ ul{
     text-align: center;
 }
 .main-heading h2{
-    font-family: var(--font-heading);
     font-size: 40px;
     font-weight: normal;
     text-transform: uppercase;
@@ -128,10 +127,10 @@ ul{
 /* End Components */
 /* Start Header */
 header{
-   position: absolute;
-   width: 100%;
-   left: 0;
-   z-index: 2;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 2;
 }
 header .container{
     display: flex;
@@ -186,10 +185,9 @@ header nav{
 }
 header nav ul li a{
     display: block;
-    text-decoration: none;
     transition: 0.3s;
     color: white;
-    padding: 40px 10px;
+    padding: 30px 10px;
     font-size: 18px;
 }
 header .toggle{
@@ -218,25 +216,25 @@ header nav .form i{
     transform: translateY(-50%);
 }
 @media (max-width: 767px) {
-  header nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--artisan-brown);
-    padding: 15px;
-  }
-  header nav ul.active {
-    display: flex;
-  }
-  header nav ul li a{
-    padding: 10px;
-    color: white ;
-    border: 0;
-    font-size: 14px;
-  }
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--artisan-brown);
+        padding: 15px;
+    }
+    header nav ul.active {
+        display: flex;
+    }
+    header nav ul li a{
+        padding: 10px;
+        color: white ;
+        border: 0;
+        font-size: 14px;
+    }
     header nav ul li a.active,
     header nav ul li a:hover{
         color: white;
@@ -247,8 +245,8 @@ header nav .form i{
 /* Start Landing */
 .landing{
     min-height: 100vh;
-    background-image: url("../Images/Craft/BG_9.jpg");
-    background-color: var(--artisan-tan); /* Apper when any problem hapen to the BG Img*/
+    background-image: url("../Images/Craft/BG_9.webp");
+    background-color: var(--artisan-tan);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -285,7 +283,6 @@ header nav .form i{
     }
 }
 .landing .overlay .text .content h2{
-    font-family: var(--font-heading);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     font-size: 32px;
     line-height: 1.5;
@@ -333,9 +330,16 @@ header nav .form i{
     margin-right: 10px;
     cursor: pointer;
 }
-.landing .bullets .active{
+.landing .bullets li.active{
     background-color: var(--main-color);
     border-color: var(--main-color);
+}
+.landing.slide-changing {
+    animation: slideFade 0.6s ease;
+}
+@keyframes slideFade {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
 }
 /* End landing */
 /* Start services */
@@ -369,8 +373,6 @@ header nav .form i{
     }
 }
 .services .srv-box h3{
-    font-family: var(--font-subheading);
-    color: var(--main-color);
     margin-bottom: 30px;
 }
 .services .srv-box p{
@@ -384,7 +386,7 @@ header nav .form i{
     padding: var(--section-padding);
     height: 600px;
     position: relative;
-    background-image: url("../Images/Craft/CraftMan_1.jpg");
+    background-image: url("../Images/Craft/CraftMan_1.webp");
     background-size: cover;
     background-position: center;
     background-color: var(--main-color);
@@ -429,7 +431,6 @@ header nav .form i{
     background-color: var(--secondary-color);
 }
 .design .text h2{
-    font-family: var(--font-heading);
     margin-bottom: 40px;
     font-weight: normal;
     text-transform: uppercase;
@@ -480,6 +481,8 @@ header nav .form i{
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 100%;
+    transition: opacity 0.4s ease-in-out;
+    animation: fadeIn 0.5s;
 }
 @media (min-width: 768px) {
     .portfolio .imgs-container .box{
@@ -532,6 +535,10 @@ header nav .form i{
     display: block;
     width: fit-content;
     text-transform: uppercase;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 /* End Portfolio */
 /* Button Style and hover */
@@ -604,7 +611,6 @@ header nav .form i{
 }
 .video .text{
     position: absolute;
-    background-color: var(--secondary-color);
     color: white;
     text-align: center;
     top: 50%;
@@ -654,7 +660,7 @@ header nav .form i{
     padding: var(--section-padding);
     position: relative;
     text-align: center;
-    background-image: url("../Images/Craft/BG_8.jpg");
+    background-image: url("../Images/Craft/BG_8.webp");
     background-size: cover;
     background-position: center;
 }
@@ -780,6 +786,7 @@ header nav .form i{
     border: 1px solid #aaa;
     border-radius: 50%;
     margin-right: 10px;
+    cursor: pointer;
 }
 .our-skills .testimonials .bullets li.active{
     background-color: var(--main-color);
@@ -839,7 +846,8 @@ header nav .form i{
     text-align: center;
     color: white;
     position: relative;
-    background-image: url("../Images/bgQuote.jpg");
+    background-image: url("../Images/bgQuote.webp");
+    background-attachment: fixed;
     background-size: cover;
 }   
 .quote::before{
@@ -983,7 +991,8 @@ header nav .form i{
 /* Start Subscribe  */
 .subscribe{
     padding: var(--section-padding);
-    background-image: url("../Images/bgSub.jpg");
+    background-image: url("../Images/bgSub.webp");
+    background-attachment: fixed;
     background-size: cover;
     position: relative;
 }
@@ -1158,7 +1167,7 @@ header nav .form i{
 /* Start Footer  */
 .footer{
     padding: 50px 0;
-    background-image: url("../Images/bgSub.jpg");
+    background-image: url("../Images/bgSub.webp");
     background-size: cover;
     position: relative;
     color: var(--bg-cream);
@@ -1177,9 +1186,9 @@ header nav .form i{
     position: relative;
 }
 .footer img {
-  width: 100px;
-  height: 100px;
-  margin: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
 }
 .footer p:not(.copyright){
     font-size: 22px;
@@ -1206,3 +1215,54 @@ header nav .form i{
     font-weight: bold;
 }
 /* End Footer  */
+/* Start Scroll Animations */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* End Scroll Animations */
+
+/* Start Stat Counter Animation */
+.stats .container .box .num.counting {
+    animation: countPulse 0.3s ease-in-out;
+}
+
+@keyframes countPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+/* End Stat Counter Animation */
+
+/* Start Skill Bar Animation */
+.our-skills .skills .porg-holder .prog span {
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* End Skill Bar Animation */
+
+/* Start WebP Fallback — if browser doesn't support WebP, use JPEG/PNG */
+.no-webp .landing {
+    background-image: url("../Images/Craft/BG_9.jpg");
+}
+.no-webp .design {
+    background-image: url("../Images/Craft/CraftMan_1.jpg");
+}
+.no-webp .stats {
+    background-image: url("../Images/Craft/BG_8.jpg");
+}
+.no-webp .quote {
+    background-image: url("../Images/bgQuote.jpg");
+}
+.no-webp .subscribe,
+.no-webp .footer {
+    background-image: url("../Images/bgSub.jpg");
+}
+/* End WebP Fallback */
+

@@ -1,0 +1,89 @@
+# Netlify Configuration — Willow & Hide
+# This is a static HTML/CSS/JS site — no build step required.
+
+[build]
+  publish = "."  # Serve from the project root (index.html is at the root)
+
+# Splitting the publish directory (ignore for a root-based site)
+[build.processing]
+  skip_processing = false
+
+# --- Image optimization ---
+[build.processing.images]
+  optimize = true  # Netlify can further optimize images on the CDN edge
+
+# --- CSS processing (minification, vendor prefixing) ---
+[build.processing.css]
+  minify = true
+  bundle = false
+
+# --- JS processing (minification) ---
+[build.processing.js]
+  minify = true
+  bundle = false
+
+# --- HTML processing (minification) ---
+[build.processing.html]
+  pretty_urls = false  # Keep .html extensions as-is
+
+# --- Redirects ---
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Single Page App style: all routes serve index.html
+  # (useful if you add client-side routing later)
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301  # Permanent redirect to cleaner URL
+
+# --- Cache Headers for Performance ---
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/Css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/webfonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# --- Security Headers ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
